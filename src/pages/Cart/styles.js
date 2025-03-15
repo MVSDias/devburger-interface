@@ -4,7 +4,7 @@ import Background from '../../assets/bg-login2.svg';
 
 export const Container = styled.div`
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: ${(props) => props.theme.secondWhite};
   min-height: 100vh; // todo espaço disponível
   background:
     linear-gradient(rgba(255, 255, 200, 0.1), rgba(255, 255, 200, 0.1)),
@@ -16,7 +16,7 @@ export const Banner = styled.div`
   background-image: url(${Texture});
   background-image: center;
   background-size: cover;
-  background-color: #1f1f1f;
+  background-color: ${(props) => props.theme.mainBlack};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +30,7 @@ export const Title = styled.div`
   text-align: center;
   font-size: 32px;
   font-weight: 800;
-  color: #61a120;
+  color: ${(props) => props.theme.green};
   padding-bottom: 12px; // separar o nome do traço embaixo
   position: relative; // pq o traço será position absolute
 
@@ -38,7 +38,7 @@ export const Title = styled.div`
     content: '';
     width: 70px;
     height: 4px;
-    background-color: #61a120;
+    background-color: ${(props) => props.theme.green};
     position: absolute;
     bottom: 0;
     left: 50%; // centraliza o traço embaixo

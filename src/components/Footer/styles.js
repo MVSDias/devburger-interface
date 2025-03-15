@@ -10,7 +10,7 @@ justify-content: center;
 
 
 p {
-    color: #ffffff;
+    color: ${(props) => props.theme.white};
     font-size: 14px;
     font-weight: 200;
 }

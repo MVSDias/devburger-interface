@@ -43,7 +43,7 @@ export const RightContainer = styled.div`
   p {
     font-size: 18px;
     font-weight: 800;
-    color: #fff;
+    color: ${(props) => props.theme.white};
 
     a {
       text-decoration: underline;
@@ -53,11 +53,11 @@ export const RightContainer = styled.div`
 export const Title = styled.h2`
   font-family: 'Road Rage', sans-serif;
   font-size: 40px;
-  color: #fff;
+  color: ${(props) => props.theme.white};
 
   span {
     font-family: 'Road Rage', sans-serif;
-    color: #9758a6;
+    color: ${(props) => props.theme.purple};
   }
 `;
 export const Form = styled.form`
@@ -86,13 +86,13 @@ export const InputContainer = styled.div`
   label {
     font-size: 18px;
     font-weight: 600;
-    color: #ffffff;
+    color: ${(props) => props.theme.white}fff;
   }
 
   p {
     font-size: 14px;
     line-height: 80%;
-    color: #cf3057;
+    color: ${(props) => props.theme.darkRed};
     font-weight: 600;
     height: 10px; // para evitar q o input suba ao mostrar a mensagem de erro.
   }
@@ -100,7 +100,7 @@ export const InputContainer = styled.div`
 
 export const Link = styled(ReactLink)`
 text-decoration: none;
-color: #ffffff;
+color: ${(props) => props.theme.white};
 
 
 `

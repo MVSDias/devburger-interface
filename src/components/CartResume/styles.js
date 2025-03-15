@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.white};
 
   border-radius: 20px;
   display: flex;
@@ -10,7 +10,7 @@ export const Container = styled.div`
   margin-bottom: 20px;
 
   * {
-    color: #484848;
+    color: ${(props) => props.theme.secondBlack};
     font-weight: 500;
   }
 
@@ -26,8 +26,8 @@ export const Container = styled.div`
       grid-area: title;
       font-size: 20px;
       font-weight: 800;
-      background-color: #484848;
-      color: #fff;
+      background-color: ${(props) => props.theme.secondBlack};
+      color: ${(props) => props.theme.white};
       width: 100%;
       padding: 13px;
       text-align: center;

@@ -42,7 +42,7 @@ export function Header() {
         </Navigation>
         <Options>
           <Profile>
-            <UserCircle color="#fff" size={24} />
+            <UserCircle color="${(props) => props.theme.white}" size={24} />
             <div>
               <p>
                 Olá, <span>{userInfo.name}</span>
@@ -51,7 +51,7 @@ export function Header() {
             </div>
           </Profile>
           <LinkContainer>
-            <ShoppingCart color="#fff" />
+            <ShoppingCart color="${(props) => props.theme.white}" />
             <HeaderLink to='/carrinho'>Carrinho</HeaderLink>
           </LinkContainer>
         </Options>
