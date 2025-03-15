@@ -25,40 +25,55 @@ export function CartResume() {
 
   const submitOrder = async () => {
     const products = cartProducts.map((product) => {
-      // faço um map e retorno os produtos no formato que o backend espera(só id e quantidade de produto)
+      // faço um map no cardProducts e retorno os produtos no formato que o backend espera(só id, quantidade e preço do produto)
       return {
         id: product.id,
         quantity: product.quantity,
+        price: product.price,
       };
     });
 
     try {
-      const { status } = await api.post(
-        '/orders',
-        {
-          products,
-        },
-        {
-          validateStatus: () => true,
-        },
-      );
+      // entra em contato com o stripe no backend passando os dados q ele precisa p criar a intenção de pagamento
+      const { data } = await api.post('/create-payment-intent', { products });
 
-      if (status === 200 || status === 201) {
-        
-        setTimeout(() => {
-          navigate('/');
-        }, 2000);
-        toast.success('Pedido realizado com sucesso 👌');
-        clearCart();
+      navigate('/checkout', {// navego p rota de checkout e envio o data pelo state da rota. Onde o usuário não tem acesso
+        state: data
+      })
 
-      } else if (status === 409) {
-        toast.error('Falha ao realizar seu pedido');
-      } else {
-        throw new Error();
-      }
+      console.log(data);
     } catch (err) {
-      toast.error('Falha no Sistema 🤯! Tente novamente. ');
+      toast.error('Erro, tente novamente');
+      console.log(err.message)
     }
+
+    // try {
+    //   const { status } = await api.post(
+    //     '/orders',
+    //     {
+    //       products,
+    //     },
+    //     {
+    //       validateStatus: () => true,
+    //     },
+    //   );
+
+    //   if (status === 200 || status === 201) {
+
+    //     setTimeout(() => {
+    //       navigate('/');
+    //     }, 2000);
+    //     toast.success('Pedido realizado com sucesso 👌');
+    //     clearCart();
+
+    //   } else if (status === 409) {
+    //     toast.error('Falha ao realizar seu pedido');
+    //   } else {
+    //     throw new Error();
+    //   }
+    // } catch (err) {
+    //   toast.error('Falha no Sistema 🤯! Tente novamente. ');
+    // }
   };
 
   return (
