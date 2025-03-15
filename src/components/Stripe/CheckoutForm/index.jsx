@@ -69,7 +69,7 @@ export default function CheckoutForm() {
 
         if (status === 200 || status === 201) {
           setTimeout(() => {
-            navigate('/complete');
+            navigate(`/complete?payment_intent_client_secret=${paymentIntent.client_secret}`); // passando o clientSecret por queryparams
           }, 2000);
           toast.success('Pedido realizado com sucesso 👌');
           clearCart();
