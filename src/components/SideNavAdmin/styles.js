@@ -17,6 +17,8 @@ export const NavLinkContainer = styled.nav`
   display: flex;
   flex-direction: column;
   width: 100%;
+  transition: all 200ms;
+  
 `;
 export const NavLink = styled(Link)`
   display: flex;
@@ -25,6 +27,7 @@ export const NavLink = styled(Link)`
   padding: 12px 20px;
   text-decoration: none;
   color: ${(props) => props.theme.white};
+  background: ${(props) => props.$isActive ? props.theme.purple : 'transparent'};
 
   &:hover {
     background-color: ${(props) => props.theme.purple};
