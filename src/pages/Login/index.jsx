@@ -59,11 +59,16 @@ export function Login() {
         },
       );
 
-      console.log(response);
+      
 
       if (response.status === 200 || response.status === 201) {
         setTimeout(() => {
-          navigate('/');
+          if(userData?.admin){// se tiver admin, navego p tela de admin/home. Caso não tenh essa informação o elvis operator impede q quebre a app
+            navigate('/admin/pedidos')
+          } else { // se não for admin navego p home normal
+            navigate('/');
+          }
+          
         }, 2000);
         toast.success('Seja Bem Vindo(a) 👌');
 
