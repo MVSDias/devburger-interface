@@ -9,12 +9,12 @@ import { Row } from './row';
 import { useEffect, useState } from 'react';
 import { api } from '../../../services/api';
 import { orderStatusOptions } from './orderStatus';
-import { Filter, FilterOptions } from './styles'
+import { Filter, FilterOptions } from './styles';
 
 export function Orders() {
   const [orders, setOrders] = useState([]); // backup de orders
   const [filteredOrders, setfilteredOrders] = useState([]); // valores(orders) que estão na tela
-  const [activeStatus, setActiveStatus] = useState(0) // mostra o status q está ativo. Por padrão, começa com 0(todos)
+  const [activeStatus, setActiveStatus] = useState(0); // mostra o status q está ativo. Por padrão, começa com 0(todos)
   const [rows, setRows] = useState([]);
   // console.log(rows)
   useEffect(() => {
@@ -22,7 +22,7 @@ export function Orders() {
       // uso uma função assíncrona para fazer uma chamada a api
       const { data } = await api.get('/orders'); //guardo em data o que chega da api na rota get.orders
       setOrders(data); // atualizo as orders aqui
-      setfilteredOrders(data)// atualizo as orders q estão na tela aqui
+      setfilteredOrders(data); // atualizo as orders q estão na tela aqui
       // console.log(data);
     }
 
@@ -48,27 +48,47 @@ export function Orders() {
   }, [filteredOrders]); // sempre q filteredOrders mudar chamo esse useEffect
   // console.log(rows)
 
-  function handleStatus(status){ // recebe o status(id,  value e label)
-    if(status.id === 0){ // se escolhi todos (id = 0)
+  function handleStatus(status) {
+    // recebe o status(id,  value e label)
+    if (status.id === 0) {
+      // se escolhi todos (id = 0)
       setfilteredOrders(orders); // abasteço o setFilteredOrders com o backup(orders)
     } else {
-      const newOrders = orders.filter(order => order.status === status.value); // filtro o backup(sempre fitro pelo backup, pq ele sempre tem todas as orders), e comparo o status da orderdo backup com o status.value (q está chegando aqui em status). se for igual vai pro novo array(newOrders)
+      const newOrders = orders.filter((order) => order.status === status.value); // filtro o backup(sempre fitro pelo backup, pq ele sempre tem todas as orders), e comparo o status da orderdo backup com o status.value (q está chegando aqui em status). se for igual vai pro novo array(newOrders)
       setfilteredOrders(newOrders); // abasteço o array q vai aparecer na tela com newOrders
-
     }
 
-    setActiveStatus(status.id) // atualizo o active Status com o id do status ativo na tela
+    setActiveStatus(status.id); // atualizo o active Status com o id do status ativo na tela
   }
+
+  useEffect(() => {
+    // será chamado toda vez q tiver alteração na order, e mudará o q aparece na tela de pedidos, movendo o pedido pro seu lugar novo.
+    if (activeStatus === 0) {
+      // se o status for todos(0) não mudará nada na tela de pedidos
+      setfilteredOrders(orders);
+    } else {
+      const statusIndex = orderStatusOptions.findIndex(
+        (status) => status.id === activeStatus,
+      ); // filtro o array orderStatusOptions p achar o index onde o id do status(id, value e label) é igual ao activeStatus
+
+      const newFilteredOrders = orders.filter(order => order.status === orderStatusOptions[statusIndex].value)
+       // faço um filtro em orders e busco um order.status que seja igual ao value do array orderStatusOptions na posição [statusIndex], encontrada no filtro acima
+
+       setfilteredOrders(newFilteredOrders) // atualizo as orders filtradas com esse novo array(newFilteredOrders)
+    }
+  }, [orders]);
 
   return (
     <>
       <Filter>
         {orderStatusOptions.map((status) => (
-          <FilterOptions 
-          key={status.id}
-          onClick={() => handleStatus(status)}
-          $isActiveStatus={activeStatus === status.id} //faço uma verificação p saber se o staus ativo tem o mesmo id do status. concluo no styled.
-          >{status.label}</FilterOptions>
+          <FilterOptions
+            key={status.id}
+            onClick={() => handleStatus(status)}
+            $isActiveStatus={activeStatus === status.id} //faço uma verificação p saber se o staus ativo tem o mesmo id do status. concluo no styled.
+          >
+            {status.label}
+          </FilterOptions>
         ))}
       </Filter>
       <TableContainer component={Paper}>

@@ -71,6 +71,7 @@ export function Row(props) {
             // procuro dentro do meu array de opções, dentro de status.value se algum é igual ao status que chega em row.status. Se for igual coloco no select, como default. Se não existir deixo como null(aparece status apenas)
             onChange={(status) => newStatusOrder(row.orderId, status.value)} // sempre que mudar no select o status, chama a função newStatusOrder, atualiza a order pelo id (orderId) e o novo status.value q foi selecionado.
             isLoading={loading}
+            menuPortalTarget={document.body} // agora o menu do select não se restinge a abrir apenas dentro da tabela.
           />
         </TableCell>
       </TableRow>
