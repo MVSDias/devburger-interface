@@ -9,7 +9,7 @@ export function SideNavAdmin() {
   const { logout } = useUser();
   const { pathname } = useResolvedPath(); // mostra a rota atual(aonde estou)
 
-  console.log(pathname);
+ 
   return (
     <Container>
       <img src={Logo} alt="logo-devburger" />
