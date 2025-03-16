@@ -14,18 +14,35 @@ import { useState } from 'react';
 import { formateDate } from '../../../utils/formatDate';
 import { ProductImage, SelectStatus } from './styles';
 import { orderStatusOptions } from './orderStatus';
-import { api } from '../../../services/api'
-
+import { api } from '../../../services/api';
 
 export function Row(props) {
-  const { row } = props;
+  const { row, orders, setOrders } = props; //vindo de index.jsx por props
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  async function newStatusOrder(id, status){ // vai atualizar o status da order
-    await api.put(`orders/${id}`, {status}) // acesso a api na rota orders, metodo put e atualizo o status na order no backend
+  async function newStatusOrder(id, status) {
+    // vai atualizar o status da order
+
+    try {
+
+      setLoading(true) // inicio o loading(...)
+      await api.put(`orders/${id}`, { status }); // acesso a api na rota orders, metodo put e atualizo o status na order no backend
+
+      const newOrders = orders.map((order) =>
+        order._id === id ? { ...order, status } : order,
+      ); // pego order por order, comparo o id do pedido q estou alterando com todos os id's que estão chegando aqui da api. Se for igual, esparramo a order e altero apenas o status. Se não retorna a order sem alteração.
+      setOrders(newOrders); //atualizo orders com as novas orders que foram mapeadas(tanto a que alterou quanto a q se manteve)
+    } catch (err) { // se não conseguir estoura um erro e mostro no console.error com a mensagem de erro gerada.
+      console.error(err);
+    }
+
+    finally { // o finally é sempre chamado (quando  o try de certo. Quando não dá, cai no catch, catch executa e depois cai no finally)
+      setLoading(false) // interrompo o loading(...)
+    }
   }
 
-  console.log(row.status)
+  // console.log(row.status);
 
   return (
     <>
@@ -52,7 +69,8 @@ export function Row(props) {
               (status) => status.value === row.status || null,
             )}
             // procuro dentro do meu array de opções, dentro de status.value se algum é igual ao status que chega em row.status. Se for igual coloco no select, como default. Se não existir deixo como null(aparece status apenas)
-            onChange={status => newStatusOrder(row.orderId, status.value)}  // sempre que houver uma mudança no status, chama a função newStatusOrder, atualiza a order com o id orderId e o value do status
+            onChange={(status) => newStatusOrder(row.orderId, status.value)} // sempre que mudar no select o status, chama a função newStatusOrder, atualiza a order pelo id (orderId) e o novo status.value q foi selecionado.
+            isLoading={loading}
           />
         </TableCell>
       </TableRow>
@@ -97,6 +115,8 @@ export function Row(props) {
 
 Row.propTypes = {
   // validando os dados que estão chegando pelos props
+  orders: PropTypes.array.isRequired,
+  setOrders: PropTypes.func.isRequired,
   row: PropTypes.shape({
     orderId: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
