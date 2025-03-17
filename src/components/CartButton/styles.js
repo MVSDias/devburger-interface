@@ -12,4 +12,6 @@ font-size: 30px;
 &:hover {
     background-color: #${(props) => props.theme.SecondDarkPurple};  
 }
+
+
 `

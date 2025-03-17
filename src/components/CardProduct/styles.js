@@ -40,5 +40,6 @@ export const CardImage = styled.img`
   height: 100px;
   position: absolute; // para ficar a posição q eu escolher absoluta.
   top: -50px; // ultrapassa em 50px o limite da div q contem a imagem
+  border-radius: 50%;
   
 `;

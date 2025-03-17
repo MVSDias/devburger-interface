@@ -4,6 +4,7 @@ export const ProductImage = styled.img`
   height: 80px;
   width: 80px;
   border-radius: 16px;
+  
 `;
 export const ButtonGroup = styled.div`
   display: flex;

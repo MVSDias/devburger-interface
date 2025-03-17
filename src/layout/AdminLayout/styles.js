@@ -8,7 +8,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1; // pra ocupar todo espaço disponível
-    height: 110vh;
+    height: 100vh;
     width: 100%;
     background: ${(props) => props.theme.secondWhite};
     overflow-y: auto; // se precisar ter rolagem vertical

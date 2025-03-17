@@ -15,7 +15,7 @@ import { useUser } from '../../hooks/UserContext';
 
 export function Header() {
   const navigate = useNavigate();
-  const { logout, userInfo } = useUser();//pego o logout p sair e o userInfo para colocar o nome do usuário no header, dinamicamente.
+  const { logout, userInfo } = useUser(); //pego o logout p sair e o userInfo para colocar o nome do usuário no header, dinamicamente.
 
   const { pathname } = useResolvedPath(); // o pathname mostra exatamente em q pagina estamos(caminho)
 
@@ -42,17 +42,17 @@ export function Header() {
         </Navigation>
         <Options>
           <Profile>
-            <UserCircle color="${(props) => props.theme.white}" size={24} />
+            <UserCircle />
             <div>
               <p>
-                Olá, <span>{userInfo.name}</span>
+                Olá, <span> {userInfo.name}</span>
               </p>
               <Logout onClick={logoutUser}>Sair</Logout>
             </div>
           </Profile>
           <LinkContainer>
-            <ShoppingCart color="${(props) => props.theme.white}" />
-            <HeaderLink to='/carrinho'>Carrinho</HeaderLink>
+            
+            <HeaderLink to="/carrinho"><ShoppingCart  /></HeaderLink>
           </LinkContainer>
         </Options>
       </Content>

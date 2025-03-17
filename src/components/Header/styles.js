@@ -43,7 +43,7 @@ export const Navigation = styled.nav`
 export const HeaderLink = styled(Link)`
   color: ${(props) => (props.$isActive ? (props) => props.theme.purple : (props) => props.theme.white)};
   border-bottom: ${(props) => (props.$isActive ? `1px solid ${(props)=> props.theme.purple}` : 'none')};
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   transition: color 200ms;
 
@@ -69,11 +69,18 @@ export const Profile = styled.div`
     color: ${(props) => props.theme.white};
     line-height: 90%;
     font-weight: 300;
+    
 
     span {
       font-weight: 700;
       color: ${(props) => props.theme.purple};
+      padding-left: 2px;
+      font-size: 18px;
     }
+  }
+  svg {
+    color: ${(props) => props.theme.white};
+    font-size: 30px;
   }
 `;
 
@@ -81,6 +88,11 @@ export const LinkContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  svg {
+    color: ${(props) => props.theme.white};
+    font-size: 30px;
+  }
 `;
 
 export const Logout = styled.button`
@@ -89,4 +101,6 @@ export const Logout = styled.button`
   font-weight: 700;
   background-color: transparent;
   border: none;
+  padding-top: 3px;
+  font-size: 15px;
 `;
