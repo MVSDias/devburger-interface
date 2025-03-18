@@ -17,24 +17,19 @@ export function Menu() {
   const [filteredProducts, setfilteredProducts] = useState([]);
 
   const navigate = useNavigate();
-  const { search } = useLocation(); // pego apenas o search de dentro do useLocation
-  const queryParams = new URLSearchParams(search); // manipula parametros que vem pelo query params. nesse caso o parametro é o search.
 
-  const [activeCategory, setActiveCategory] = useState(() => {
-    const categoryId = +queryParams.get('categorias'); // O queryParams é a variável que criei para armazenar o resultado do new URLSearchParams. O sinal de mais (+) serve para converter a string em numbe, nesse caso. Uso o  método get do URLSearchParams para buscar categorias e armazenar em categoryId
+  const { search } = useLocation();
+  // pego apenas o search de dentro do useLocation
 
-    // faço uma verificação pra saber qual será o valor retornará como default quando a pagina carregar.
-    
+  const [activeCategory, setActiveCategory] = useState(0);
 
-    if (categoryId) {// se tiver algum valor aqui...
-      return categoryId; //...  o categoryId será o valor inicial de activeCategory
-    } 
-        return 0; // se não 0 será default
+  useEffect(() => {
+    const queryParams = new URLSearchParams(search); // O queryParams é a variável que criei para armazenar o resultado do new URLSearchParams. O sinal de mais (+) serve para converter a string em numbe, nesse caso. Uso o  método get do URLSearchParams para buscar o id das categorias e armazenar em categoryId
+    const categoryId = +queryParams.get('categorias') || 0; // Converte para número ou usa 0 como padrão
 
-        
-  });
-
-  
+    // console.log('🔄 Atualizando categoria ativa para:', categoryId);
+    setActiveCategory(categoryId);
+  }, [search]); // 🔥 O useEffect atualiza toda vez que a URL muda
 
   // chamada a api
   useEffect(() => {
@@ -96,17 +91,10 @@ export function Menu() {
             key={category.id}
             $isActiveCategory={category.id === activeCategory}
             onClick={() => {
-              navigate(
-                {
-                  pathname: '/cardapio',
-                  search: `?categorias=${category.id}`,
-                  // passando minfo pelo queryparams
-                },
-                {
-                  replace: true, // substitui a url existente
-                },
-              );
-              setActiveCategory(category.id);
+              navigate({
+                pathname: '/cardapio',
+                search: `?categorias=${category.id}`,
+              });
             }}
           >
             {category.name}

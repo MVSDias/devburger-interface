@@ -1,11 +1,11 @@
-// busco as categorias na api
+// busco as categoria na api
 
 import { useEffect, useState } from 'react';
 import { api } from '../../services/api';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { CategoryButton, Container, ContainerItems, Title } from './styles';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export function CategoriesCarousel() {
   const [categories, setCategories] = useState([]);
@@ -14,14 +14,25 @@ export function CategoriesCarousel() {
 
   useEffect(() => {
     // chamada a api
+
     async function loadCategories() {
-      //
-      const { data } = await api.get('/categories'); // vou até o backend em categories e pego o data dentro da response que chega aqui.
-      
-      setCategories(data);
+      try {
+        const { data } = await api.get('/categories'); // vou até o backend em categories e pego o data dentro da response que chega aqui.
+
+        setCategories(data);
+        // console.log(data);
+      } catch (error) {
+        console.error('Erro ao carregar categorias:', error);
+      }
     }
     loadCategories();
   }, []);
+  // console.log(categories);
+
+  const location = useLocation();
+  // useEffect(() => {
+  //   console.log('Location atual:', location);
+  // }, [location]);
 
   const responsive = {
     superLargeDesktop: {
@@ -45,24 +56,22 @@ export function CategoriesCarousel() {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
-  
+
   return (
     <Container>
       <Title>Categorias</Title>
       <Carousel
         responsive={responsive}
         infinite={true}
-        partialVisbile={false}
+        partialVisible={false}
         itemClass="carousel-item"
       >
         {categories.map((category) => (
           <ContainerItems key={category.id} imageUrl={category.url}>
             <CategoryButton
               onClick={() => {
-                navigate({
-                  pathname: '/cardapio',
-                  search: `?categoria=${category.id}`,
-                });
+                const newUrl = `/cardapio?categorias=${category.id}`;
+                navigate(newUrl, { replace: true });
               }}
             >
               {category.name}

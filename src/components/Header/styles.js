@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Badge } from "@mui/material";
 
 export const Container = styled.div`
   background-color:rgba(31,31,31,0.8);
@@ -104,3 +105,17 @@ export const Logout = styled.button`
   padding-top: 3px;
   font-size: 15px;
 `;
+
+export const BadgeIcon = styled(Badge)`
+  & .MuiBadge-badge {
+    background-color: #ff3205; 
+    color: white;               
+    font-size: 12px;            
+    padding: 5px;               
+    min-width: 20px;            
+    height: 20px;              
+    border-radius: 50%;        
+  }
+`;
+
+

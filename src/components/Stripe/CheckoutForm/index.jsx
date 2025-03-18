@@ -9,9 +9,7 @@ import '../styles.css';
 import { useCart } from '../../../hooks/CartContext';
 import { api } from '../../../services/api';
 import { toast } from 'react-toastify';
-import BG from '../../../assets/bg-login2.svg'
-
-
+import BG from '../../../assets/bg-login2.svg';
 
 export default function CheckoutForm() {
   const { cartProducts, clearCart } = useCart();

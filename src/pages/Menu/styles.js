@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import BannerHamburger from '../../assets/banner-burger.svg';
 import Background from '../../assets/bg-login2.svg';
-import { Link } from 'react-router-dom';
+
 
 export const Container = styled.div`
   width: 100%;
@@ -45,7 +45,7 @@ export const CategoryMenu = styled.div`
   gap: 50px;
   margin-top: 30px;
 `;
-export const CategoryButton = styled(Link)`
+export const CategoryButton = styled.button`
   text-decoration: none;
   cursor: pointer;
   background: none;

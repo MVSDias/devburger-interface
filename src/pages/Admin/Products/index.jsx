@@ -21,7 +21,7 @@ export function Products() {
     async function loadProducts() {
       //
       const { data } = await api.get('/products'); // vou até o backend em categories e pego o data dentro da response que chega aqui.
-      console.log(data);
+      // console.log(data);
 
       setProducts(data);
     }
@@ -32,7 +32,7 @@ export function Products() {
     // vai determinar se o produto está em oferta. e dependendo da resposta, coloca o ícone correspondente na tabela de produtos
 
     if (offer) {
-      console.log(offer);
+      // console.log(offer);
       return <CheckCircle color="#61a120" size="28" />;
     } else {
       return <XCircle color="#FF3205" size="28" />;

@@ -59,7 +59,7 @@ export function NewProduct() {
       const { data } = await api.get('/categories'); // vou na api e pego categories
       setCategories(data); //atualizo categories com as categories q chegam da api
 
-      console.log(data);
+      // console.log(data);
     }
 
     loadCategories(); // chamo a function async
