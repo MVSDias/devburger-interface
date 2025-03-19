@@ -11,9 +11,18 @@
 <br>
 
 <div>
-  <img src="https://github.com/MVSDias/CONVERSOR_de_MOEDAS/blob/main/images/desktop.conversor.png?raw=true" width="700px"/>
-  <img src="https://github.com/MVSDias/CONVERSOR_de_MOEDAS/blob/main/images/mobile.conversor.png?raw=true" height="400px"/>
+  <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/tela_criacao_conta.png?raw=true" width="700px"/>
+  <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/tela_login.png?raw=true" width="700px"/>
+  <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/home_devburger.png?raw=true" width="700px"/>
+  <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/menu_devburger.png?raw=true" width="700px"/>
+  <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/tela_finalizar_pedido.png?raw=true" width="700px"/>
+  <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/tela_pagamento.png?raw=true" width="700px"/>
+  <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/tela_confirmacao_pagamento.png?raw=true" width="700px"/>
+  <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/tela_admin_pedidos.png?raw=true" width="700px"/>
+  <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/tela_adicionar_produto.png?raw=true" width="600px height="400px"/>
+  <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/tela_editar_produtos.png?raw=true" width="700px"/>
 </div>
+<br>
 <br>
 <br>
 
