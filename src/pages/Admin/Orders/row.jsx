@@ -95,7 +95,7 @@ export function Row(props) {
                   {row.products.map((product) => (
                     <TableRow key={product.id}>
                       <TableCell component="th" scope="row">
-                        {product.id}
+                        {product.quantity}
                       </TableCell>
                       <TableCell>{product.name}</TableCell>
                       <TableCell>{product.category}</TableCell>

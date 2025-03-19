@@ -9,9 +9,15 @@ import Paper from '@mui/material/Paper';
 import { useEffect, useState } from 'react';
 import { api } from '../../../services/api';
 import { Container, EditButton, ProductImage } from './styles';
-import { CheckCircle, Pencil, XCircle } from '@phosphor-icons/react';
+import {
+   CheckCircle, 
+   Pencil, 
+   Trash, 
+   XCircle 
+} from '@phosphor-icons/react';
 import { formatPrice } from '../../../utils/formatPrice';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export function Products() {
   const [products, setProducts] = useState([]);
@@ -42,6 +48,26 @@ export function Products() {
   function editProduct(product) {
     // chamada pelo icone editar na tela de produto
     navigate('/admin/editar-produto', { state: { product } }); // vou navegar p tela de editar produto e passo as informações do produto por state. Assim posso pegar essas informações lá nessa tela.
+  }
+
+  async function deleteProduct(product) {
+    // console.log(product)
+    try {
+      // Executa a requisição DELETE e exibe o toast de status
+      await toast.promise(api.delete(`/products/${product.id}`), {
+        pending: 'Excluindo o produto...',
+        success: 'Produto excluído com sucesso',
+        error: 'Falha ao excluir o produto, tente novamente',
+      });
+  
+      // Atualiza a lista de produtos, removendo o produto excluído
+      setProducts(products.filter((prd) => prd.id !== product.id));
+    } catch (error) {
+      // Em caso de erro durante a requisição, vai exibir algo mais detalhado
+      console.error('Erro ao excluir o produto:', error);
+    }
+
+    setProducts(products.filter((prd) => prd.id !== product.id)); // Remove o produto da lista
   }
 
   return (
@@ -77,6 +103,9 @@ export function Products() {
                 <TableCell align="center">
                   <EditButton onClick={() => editProduct(product)}>
                     <Pencil />
+                  </EditButton>
+                  <EditButton onClick={() => deleteProduct(product)}>
+                    <Trash />
                   </EditButton>
                 </TableCell>
               </TableRow>
