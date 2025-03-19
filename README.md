@@ -56,7 +56,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/dotenv.png?raw=true" width="50px"/>
 <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/dowhook-form.png?raw=true" width="50px"/>
 <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/eslint.png?raw=true" width="50px"/>
-<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/express.png?raw=true" fill="white" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/express%20.png?raw=true" width="50px"/>
+
 <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/materialUi.png?raw=true" width="50px"/>
 <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/phosphor_icon.png?raw=true" width="50px"/>
 <img src="https://github.com/MVSDias/devburger-interface/blob/main/images/prettier.png?raw=true" width="50px"/>
