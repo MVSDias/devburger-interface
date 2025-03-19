@@ -30,13 +30,41 @@
 
 ## 🚀 Tecnologias
 
+
+<div>
+  <img src=https://github-readme-stats.vercel.app/api?username=MVSDias&show_icons=true&theme=transparent" width="560px" height="180px"/>
+</div>
+
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" width="35px" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg" width="50px"/>
+<div>
+  <img align="center" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+
+<img align="center" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+ 
+<img align="center" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+   
+<div>
+<img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg" width="50px"/>
+ 
+<img align="center" src="https://github.com/MVSDias/devburger-interface/blob/main/images/vite.jpg?raw=true" width="50px"/>
+    </div>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/react.png?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/axios.jpg?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/carousel.png?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/cors.jpg?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/dotenv.png?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/dowhook-form.png?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/eslint.png?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/express.png?raw=true" fill="white" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/materialUi.png?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/phosphor_icon.png?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/prettier.png?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/react-router-dom.png?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/stripe.png?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/styledjpg.jpg?raw=true" width="50px"/>
+<img src="https://github.com/MVSDias/devburger-interface/blob/main/images/toastfy.png?raw=true" width="50px"/>
+
 
 ## 💻 Projeto
 
