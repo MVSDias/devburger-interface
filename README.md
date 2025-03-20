@@ -69,25 +69,32 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O projeto é um conversor de moedas com varias opções, desde o Real até bitcoin, permitindo converter entre elas. 
-Foram usadas tecnologias, que permitiram a dinâmica do projeto. O video de fundo e o gift foram estilizados com css
-e a conversão toda feita em Javascript puro. Foi feito o uso de uma api <a href="https://docs.awesomeapi.com.br/api-de-moedas"> "Api Moedas" </a>
- para fazer a conversão com valores atualizados na hora do uso, tornado a aplicação totalmente funcional e profissional.
-Como demonstração das skill o projeto foi de grande valia. O que permitiu exercitar todos os conhecimentos adquiridos, e liberar a criatividade ao usar um video de fundo.
-Mais um projeto concluído com sucesso do <a href="https://rodolfomori.com.br/devclub/"> DEVCLUB- RODOLFO MORI</a>
+  O projeto é uma Hamburgueria online, onde o cliente pode se cadastrar e acessar o menu com varias opções de lanches, 
+desde entradas, hamburgueres, bebidas e sobremesas. Conta também com o menu admin, onde o administrador pode, além de 
+visualizar os pedidos e alterar o status, de acordo com o processo de criação do lanche, o administrador pode editar 
+o produto, alterando valor, nome, imagem do produto e se ele vai entrar em oferta ou não, pode inclusive excluir o 
+produto. 
+
+  Pode ainda, adicionar novos produtos com toda a facilidade e dinâmica de um projeto com React e javascript e outras 
+bibliotecas. A aplicação está totalmente funcional e profissional, o carinho de compras conta com contagem de itens no 
+carrinho que atualiza de acordo com interação do cliente, ao adicionar, incrementar a quantidade ou excluir o produto 
+do carrinho. Conta sistema de pagamento online e recebimento através do stripe, que permite o usuário fazer pagamentos 
+com cartão e possibilidade de visualização dos detalhes da compra após a aprovação. A interface do projeto, desenvolvida 
+com react, que além de dar dinâmica, facilita na componetização da aplicação, favorecendo a escalabilidade do projeto. 
+Varias bibliotecas foram usadas para agilizar e estilizar a aplicação. Os carrosséis dão estilo e funcionalidades ao projeto. 
+
+  Como demonstração das skills o projeto foi de grande valia. O que permitiu exercitar todos os conhecimentos adquiridos, e liberar a criatividade, e se encaixa nas demandas de uma empresa que precise de uma aplicação que receba pedidos, receba pagamentos e permita ao administrador acompanhar o andamento do pedido.
+  
+  O projeto faz parte do  DEVCLUB. Desenvolvido pelo RODOLFO MORI <a href="https://rodolfomori.com.br/devclub/"></a> e codado por Marcus Dias.
 
 
-- [Acesse o projeto finalizado, online]( https://mvsdias.github.io/CONVERSOR_de_MOEDAS/)
+- [Acesse o projeto finalizado, online]( https://mvsdias.github.io/devburger-interface)
 
 
 
 
 
-## :memo: Licença
 
-Esse projeto está sob a licença MIT.
-
----**
 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -99,4 +106,9 @@ Currently, two official plugins are available:
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## :memo: Licença
+
+Esse projeto está sob a licença MIT.
+
+
+
